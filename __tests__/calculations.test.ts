@@ -378,4 +378,9 @@ describe("DateTime calculations", () => {
       ])
     ).toBeTruthy();
   });
+
+  utilsTest("isValidTime: should check if passed time is valid", (date, utils) => {
+    expect(utils.isValidTime('12:30 PM')).toBeTruthy();
+    expect(utils.isValidTime('25:00 FM')).toBeFalsy();
+  });
 });

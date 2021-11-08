@@ -195,6 +195,10 @@ class MomentUtils extends DefaultMomentUtils {
 
     return years;
   };
+
+  public isValidTime = (time: string) => {
+    return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+  };
 }
 
 export default MomentUtils;

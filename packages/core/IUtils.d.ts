@@ -152,4 +152,11 @@ export interface IUtils<TDate> {
 
   /** Allow to customize displaying "am/pm" strings */
   getMeridiemText(ampm: "am" | "pm"): string;
+
+  /** Checked if passed time is valid
+   * @example
+   * isValidTime('03:30 PM') // true
+   * isValidTime('25:00 FM') // false
+  */
+  isValidTime (time: string): boolean;
 }

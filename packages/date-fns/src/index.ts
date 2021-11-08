@@ -413,6 +413,10 @@ class DateFnsUtils implements IUtils<Date> {
 
     return years;
   };
+
+  public isValidTime = (time: string) => {
+    return this.isValid(new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`))
+  };
 }
 
 export default DateFnsUtils
