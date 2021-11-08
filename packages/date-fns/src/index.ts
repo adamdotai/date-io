@@ -46,6 +46,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import startOfYear from "date-fns/startOfYear";
 import { IUtils, DateIOFormats, Unit } from "@date-io/core/IUtils";
 import isWithinInterval from "date-fns/isWithinInterval";
+import formatRelative from "date-fns/formatRelative";
 import longFormatters from "date-fns/_lib/format/longFormatters";
 import defaultLocale from "date-fns/locale/en-US";
 
@@ -413,6 +414,11 @@ class DateFnsUtils implements IUtils<Date> {
 
     return years;
   };
+
+  public fromNow = (date: Date) => {
+    // TODO: Replace with `intlFormatDistance` once https://github.com/date-fns/date-fns/issues/1782 is closed
+    return formatRelative(new Date(), date, { locale: this.locale });
+  }
 }
 
 export default DateFnsUtils

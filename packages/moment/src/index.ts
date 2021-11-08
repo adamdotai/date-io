@@ -358,6 +358,10 @@ class MomentUtils implements IUtils<defaultMoment.Moment> {
   public isWithinRange = (date: Moment, [start, end]: [Moment, Moment]) => {
     return date.isBetween(start, end, null, "[]");
   };
+
+  public fromNow = (date: Moment) => {
+    return date.fromNow();
+  }
 }
 
 export default MomentUtils
