@@ -195,6 +195,10 @@ class MomentUtils extends DefaultMomentUtils {
 
     return years;
   };
+
+  public getTodaysDateFromTime = (time: string) => {
+    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
+  };
 }
 
 export default MomentUtils;
