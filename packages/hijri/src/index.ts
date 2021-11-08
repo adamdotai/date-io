@@ -195,6 +195,10 @@ class MomentUtils extends DefaultMomentUtils {
 
     return years;
   };
+
+  public fromNow = (date: Moment) => {
+    return date.fromNow();
+  }
 }
 
 export default MomentUtils;
