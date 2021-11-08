@@ -1,7 +1,7 @@
 import Moment from "moment";
 import iMoment from "moment-hijri";
-import DefaultMomentUtils from "@date-io/moment";
-import { DateIOFormats } from "@date-io/core/IUtils";
+import DefaultMomentUtils from "@adamdotai/date-moment";
+import { DateIOFormats } from "@adamdotai/date-core/IUtils";
 
 var symbolMap = {
   1: "١",
@@ -33,6 +33,7 @@ const defaultFormats: DateIOFormats = {
   fullTime: "LT",
   fullTime12h: "hh:mm A",
   fullTime24h: "HH:mm",
+  dayDateWithTime: "dddd iMMM iD, h:mm a",
   hours12h: "hh",
   hours24h: "HH",
   keyboardDate: "iYYYY/iMM/dd",
