@@ -207,6 +207,9 @@ export interface IUtils<TDate> {
 
   /** Allow to customize displaying "am/pm" strings */
   getMeridiemText(ampm: "am" | "pm"): string;
+
+  /** Returns relative time from passed date */
+  fromNow(date: TDate): string;
 }
 ```
 
