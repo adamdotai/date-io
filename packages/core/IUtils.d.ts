@@ -156,6 +156,7 @@ export interface IUtils<TDate> {
   /** Checked if passed time is valid
    * @example
    * isValidTime('03:30 PM') // true
+   * isValidTime('23:00') // true
    * isValidTime('25:00 FM') // false
   */
   isValidTime (time: string): boolean;
