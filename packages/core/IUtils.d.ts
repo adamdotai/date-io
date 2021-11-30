@@ -154,4 +154,12 @@ export interface IUtils<TDate> {
 
   /** Allow to customize displaying "am/pm" strings */
   getMeridiemText(ampm: "am" | "pm"): string;
+
+  /** Pass time as string and get back today's date with passed time
+   * @example
+   * ```js
+   * const todaysDate = utils.getTodaysDateFromTime('03:30 PM')
+   * ```
+   */
+  getTodaysDateFromTime (time: string): TDate;
 }

@@ -359,6 +359,10 @@ class MomentUtils implements IUtils<defaultMoment.Moment> {
   public isWithinRange = (date: Moment, [start, end]: [Moment, Moment]) => {
     return date.isBetween(start, end, null, "[]");
   };
+
+  public getTodaysDateFromTime = (time: string) => {
+    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
+  };
 }
 
 export default MomentUtils
