@@ -381,6 +381,13 @@ describe("DateTime calculations", () => {
 
   utilsTest("isValidTime: should check if passed time is valid", (date, utils) => {
     expect(utils.isValidTime('12:30 PM')).toBeTruthy();
-    expect(utils.isValidTime('25:00 FM')).toBeFalsy();
+    expect(utils.isValidTime('1:30 AM')).toBeTruthy();
+    expect(utils.isValidTime('1:30')).toBeTruthy();
+    expect(utils.isValidTime('25:00')).toBeFalsy();
+    expect(utils.isValidTime('25:00 AM')).toBeFalsy();
+    expect(utils.isValidTime('12:00 FM')).toBeFalsy();
+
+    
+
   });
 });
