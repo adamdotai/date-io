@@ -387,7 +387,14 @@ describe("DateTime calculations", () => {
     expect(utils.isValidTime('25:00 AM')).toBeFalsy();
     expect(utils.isValidTime('12:00 FM')).toBeFalsy();
 
-    
 
+  utilsTest("getTodaysDateFromTime: should returns today's date with passed time", (date, utils) => {
+    const TIME = '03:30 PM'
+
+    const today = utils.date()
+    const todaysDateFromTime = utils.getTodaysDateFromTime(TIME)
+
+    expect(utils.format(todaysDateFromTime, 'fullDate')).toEqual(utils.format(today, 'fullDate'));
+    expect(utils.format(todaysDateFromTime, 'fullTime12h')).toEqual(TIME);
   });
 });

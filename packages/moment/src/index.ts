@@ -1,7 +1,7 @@
 import "../type/index";
 
 import defaultMoment, { LongDateFormatKey } from "moment";
-import { IUtils, DateIOFormats, Unit } from "@date-io/core/IUtils";
+import { IUtils, DateIOFormats, Unit } from "@adamdotai/date-core/IUtils";
 
 interface Opts {
   locale?: string;
@@ -34,6 +34,7 @@ const defaultFormats: DateIOFormats = {
   fullDateTime: "lll",
   fullDateTime12h: "ll hh:mm A",
   fullDateTime24h: "ll HH:mm",
+  dayDateWithTime: "dddd MMM d, h:mm a",
   keyboardDate: "L",
   keyboardDateTime: "L LT",
   keyboardDateTime12h: "L hh:mm A",
@@ -361,6 +362,10 @@ class MomentUtils implements IUtils<defaultMoment.Moment> {
 
   public isValidTime = (time: string) => {
     return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+  };
+  
+  public getTodaysDateFromTime = (time: string) => {
+    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
   };
 }
 

@@ -44,7 +44,7 @@ import startOfMonth from "date-fns/startOfMonth";
 import endOfMonth from "date-fns/endOfMonth";
 import startOfWeek from "date-fns/startOfWeek";
 import startOfYear from "date-fns/startOfYear";
-import { IUtils, DateIOFormats, Unit } from "@date-io/core/IUtils";
+import { IUtils, DateIOFormats, Unit } from "@adamdotai/date-core/IUtils";
 import isWithinInterval from "date-fns/isWithinInterval";
 import longFormatters from "date-fns/_lib/format/longFormatters";
 import defaultLocale from "date-fns/locale/en-US";
@@ -58,6 +58,7 @@ const defaultFormats: DateIOFormats = {
   fullDateTime: "PP p",
   fullDateTime12h: "PP hh:mm aaa",
   fullDateTime24h: "PP HH:mm",
+  dayDateWithTime: "EEEE MMM d, h:mm aa",
   fullTime: "p",
   fullTime12h: "hh:mm aaa",
   fullTime24h: "HH:mm",
@@ -415,7 +416,11 @@ class DateFnsUtils implements IUtils<Date> {
   };
 
   public isValidTime = (time: string) => {
-    return this.isValid(new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`))
+    return this.isValid(new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`)
+  };
+                        
+  public getTodaysDateFromTime = (time: string) => {
+    return new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`)
   };
 }
 

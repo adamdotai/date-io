@@ -45,6 +45,8 @@ export interface DateIOFormats<TLibFormatToken = string> {
   fullDateTime12h: TLibFormatToken;
   /** Not localized date & Time format 24h @example "Jan 1, 2018 23:44" */
   fullDateTime24h: TLibFormatToken;
+  /** Day, date & Time format @example "Monday Jan 1, 11:44 PM */
+  dayDateWithTime: TLibFormatToken;
   /** Localized keyboard input friendly date format @example "02/13/2020 */
   keyboardDate: TLibFormatToken;
   /** Localized keyboard input friendly date/time format @example "02/13/2020 23:44" */
@@ -160,4 +162,12 @@ export interface IUtils<TDate> {
    * isValidTime('25:00 FM') // false
   */
   isValidTime (time: string): boolean;
+  
+  /** Pass time as string and get back today's date with passed time
+   * @example
+   * ```js
+   * const todaysDate = utils.getTodaysDateFromTime('03:30 PM')
+   * ```
+   */
+  getTodaysDateFromTime (time: string): TDate;
 }
