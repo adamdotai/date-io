@@ -360,6 +360,10 @@ class MomentUtils implements IUtils<defaultMoment.Moment> {
     return date.isBetween(start, end, null, "[]");
   };
 
+  public isValidTime = (time: string) => {
+    return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+  };
+  
   public getTodaysDateFromTime = (time: string) => {
     return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
   };
