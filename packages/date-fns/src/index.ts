@@ -416,12 +416,12 @@ class DateFnsUtils implements IUtils<Date> {
   };
 
   public isValidTime = (time: string) => {
-    return this.isValid(new Date(`${this.format(new Date(), "keyboardDate")} ${time}`));
+    return this.isValid(new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`)
   };
-
+                        
   public getTodaysDateFromTime = (time: string) => {
-    return new Date(`${this.format(new Date(), "keyboardDate")} ${time}`);
+    return new Date(`${this.format(new Date(), 'keyboardDate')} ${time}`)
   };
 }
 
-export default DateFnsUtils;
+export default DateFnsUtils

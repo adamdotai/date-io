@@ -386,7 +386,7 @@ describe("DateTime calculations", () => {
     expect(utils.isValidTime('25:00')).toBeFalsy();
     expect(utils.isValidTime('25:00 AM')).toBeFalsy();
     expect(utils.isValidTime('12:00 FM')).toBeFalsy();
-  });
+
 
   utilsTest("getTodaysDateFromTime: should returns today's date with passed time", (date, utils) => {
     const TIME = '03:30 PM'
