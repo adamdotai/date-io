@@ -198,11 +198,13 @@ class MomentUtils extends DefaultMomentUtils {
   };
 
   public isValidTime = (time: string) => {
-    return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+    return this.isValid(
+      this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`)
+    );
   };
-  
+
   public getTodaysDateFromTime = (time: string) => {
-    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
+    return this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`);
   };
 }
 
