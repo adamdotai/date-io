@@ -1,6 +1,6 @@
 import Moment from "moment";
 import iMoment from "moment-hijri";
-import DefaultMomentUtils from "@adamdotai/date-moment";
+import DefaultMomentUtils from "@date-io/moment";
 import { DateIOFormats } from "@adamdotai/date-core/IUtils";
 
 var symbolMap = {
@@ -198,11 +198,13 @@ class MomentUtils extends DefaultMomentUtils {
   };
 
   public isValidTime = (time: string) => {
-    return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+    return this.isValid(
+      this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`)
+    );
   };
-  
+
   public getTodaysDateFromTime = (time: string) => {
-    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
+    return this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`);
   };
 }
 
