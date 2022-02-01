@@ -1,6 +1,6 @@
 import Moment from "moment";
 import iMoment from "moment-hijri";
-import DefaultMomentUtils from "@date-io/moment";
+import DefaultMomentUtils from "@adamdotai/date-moment";
 import { DateIOFormats } from "@adamdotai/date-core/IUtils";
 
 var symbolMap = {
