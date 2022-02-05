@@ -15,7 +15,7 @@
     "test:coverage": "cross-env TZ='UTC' NODE_ICU_DATA='./node_modules/full-icu' jest --coverage",
     "test:windows": "test.cmd",
     "benchmark": "lerna run benchmark",
-    "release": "yarn test:coverage && yarn build && lerna publish from-git --yes",
+    "release": "yarn test:coverage && yarn build && lerna publish",
     "build": "lerna run build --parallel",
     "prettier": "prettier --write './packages/**/*.{js,jsx,ts,tsx,json,css,md,mdx}'",
     "build:readme": "node scripts/buildReadme.js"
