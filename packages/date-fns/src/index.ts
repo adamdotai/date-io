@@ -422,6 +422,7 @@ class DateFnsUtils implements IUtils<Date> {
   public getTodaysDateFromTime = (time: string) => {
     return new Date(`${this.format(new Date(), "keyboardDate")} ${time}`);
   };
+  // TODO: remove this comment
 }
 
 export default DateFnsUtils;
