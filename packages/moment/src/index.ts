@@ -361,12 +361,14 @@ class MomentUtils implements IUtils<defaultMoment.Moment> {
   };
 
   public isValidTime = (time: string) => {
-    return this.isValid(this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`))
+    return this.isValid(
+      this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`)
+    );
   };
-  
+
   public getTodaysDateFromTime = (time: string) => {
-    return this.moment(`${this.format(this.moment(), 'keyboardDate')} ${time}`)
+    return this.moment(`${this.format(this.moment(), "keyboardDate")} ${time}`);
   };
 }
 
-export default MomentUtils
+export default MomentUtils;
