@@ -423,6 +423,5 @@ class DateFnsUtils implements IUtils<Date> {
     return new Date(`${this.format(new Date(), "keyboardDate")} ${time}`);
   };
 }
-// TODO: remove this comments
 
 export default DateFnsUtils;
